@@ -13,3 +13,11 @@ $conf['db_name'] = 'nol';
 
 // Site Language
 $conf['site_lang'] = 'en';
+
+// Email Configuration
+$conf['mail_type'] = 'smtp'; // Options: 'smtp' or 'mail'
+$conf['smtp_host'] = 'smtp.gmail.com';
+$conf['smtp_user'] = 'bbitalex@gmail.com';
+$conf['smtp_pass'] = 'vqkj rkzk ytjr tgus';
+$conf['smtp_port'] = 465;
+$conf['smtp_secure'] = 'ssl';
