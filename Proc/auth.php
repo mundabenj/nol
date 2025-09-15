@@ -31,10 +31,20 @@ class auth{
                 $errors['passwordLength_error'] = "Password must be at least " . $conf['min_password_length'] . " characters long";
             }
 
-            if (!count($errors)) {
-                die($fullname . " " . $email . " " . $password); // For demonstration purposes only
-            // Perform signup logic (e.g., save to database)
+            // Verify password complexity (at least one letter and one number)
+            if (!preg_match("/^(?=.*[A-Za-z])(?=.*\d).+$/", $password)) {
+                $errors['passwordComplexity_error'] = "Password must contain at least one letter and one number";
+            }
 
+            if (!count($errors)) {
+                // If no errors, proceed with signup logic
+                // die($fullname . " " . $email . " " . $password); // For demonstration purposes only
+                // Perform signup logic (e.g., save to database)
+                // Clear session data after successful signup
+                unset($_SESSION['fullname']);
+                unset($_SESSION['email']);
+                unset($_SESSION['password']);
+                $ObjFncs->setMsg('msg', 'Sign up successful. You can now log in.', 'success');
             }else{
                 $ObjFncs->setMsg('errors', $errors, 'danger');
                 $ObjFncs->setMsg('msg', 'Please fix the errors below and try again.', 'danger');
