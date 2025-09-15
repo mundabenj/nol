@@ -7,6 +7,8 @@ use PHPMailer\PHPMailer\Exception;
 
 class SendMail {
     public function Send_Mail($conf, $mailCnt) {
+//Load Composer's autoloader (created by composer, not included with PHPMailer)
+require 'Plugins/PHPMailer/vendor/autoload.php';
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
@@ -36,6 +38,5 @@ try {
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-
     }
 }
