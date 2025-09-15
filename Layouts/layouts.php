@@ -40,7 +40,7 @@ public function banner($conf) {
             <div class="p-1 mb-4 bg-body-tertiary rounded-3">
                <div class="container-fluid py-1">
                   <h1 class="display-5 fw-bold">Welcome to <?php echo $conf['site_name']; ?></h1>
-                  <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+                  <p class="col-md-8 fs-4">Check out the examples below for how you can remix and restyle it to your liking.</p>
                   <button class="btn btn-primary btn-lg" type="button">Join now</button> 
                </div>
             </div>
@@ -67,13 +67,13 @@ public function content($conf) {
             </div>
         <?php
     }
-    public function form_content($conf, $ObjForm) {
+    public function form_content($conf, $ObjForm, $ObjFncs) {
         ?>
 
             <div class="row align-items-md-stretch">
                <div class="col-md-6">
                   <div class="h-100 p-5 text-bg-dark rounded-3">
-<?php if(basename($_SERVER['PHP_SELF']) == 'signup.php') {$ObjForm->signup(); } elseif(basename($_SERVER['PHP_SELF']) == 'signin.php') {$ObjForm->signin(); } ?>
+<?php if(basename($_SERVER['PHP_SELF']) == 'signup.php') {$ObjForm->signup($conf, $ObjFncs); } elseif(basename($_SERVER['PHP_SELF']) == 'signin.php') {$ObjForm->signin($conf, $ObjFncs); } ?>
                   </div>
                </div>
                <div class="col-md-6">

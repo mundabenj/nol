@@ -1,7 +1,7 @@
 <?php
 require_once 'conf.php';
 
-$directories = ["Forms", "Layouts", "Global"];
+$directories = ["Forms", "Layouts", "Global", "Proc", "Fncs"];
 
 spl_autoload_register(function ($className) use ($directories) {
     foreach ($directories as $directory) {
@@ -17,3 +17,8 @@ spl_autoload_register(function ($className) use ($directories) {
 $ObjSendMail = new SendMail();
 $ObjForm = new forms();
 $ObjLayout = new layouts();
+
+$ObjAuth = new Auth($conf);
+$ObjFncs = new fncs();
+
+$ObjAuth->signup($conf, $ObjFncs);

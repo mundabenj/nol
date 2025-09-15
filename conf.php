@@ -1,4 +1,13 @@
 <?php
+
+// Start the session
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Set timezone
+date_default_timezone_set('Africa/Nairobi');
+
 // Site Information
 $conf['site_name'] = 'ICS Community';
 $conf['site_url'] = 'http://localhost/nol';
@@ -21,3 +30,10 @@ $conf['smtp_user'] = 'smtp_user@mail.com';
 $conf['smtp_pass'] = 'secretpassword'; // Use App Password if 2FA is enabled
 $conf['smtp_port'] = 465;
 $conf['smtp_secure'] = 'ssl';
+
+
+// Valid password length
+$conf['min_password_length'] = 8;
+
+// Valid email domains
+$conf['valid_email_domains'] = ['icsccommunity.com', 'gmail.com', 'yahoo.com', 'outlook.com', 'strathmore.edu'];
