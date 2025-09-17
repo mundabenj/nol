@@ -9,7 +9,7 @@ Hello {{fullname}},
 
 You requested an account on <strong>{{site_name}}</strong>.
 Your activation code is:
-<h1>{{activation_code}}</h1>
+<h2>{{activation_code}}</h2>
 Regards,
 Systems Admin
 {{site_name}}

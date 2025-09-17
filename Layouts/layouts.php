@@ -9,7 +9,7 @@ class layouts {
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="<?php print $conf['site_title']; ?>">
       <meta name="author" content="<?php print implode(', ', $conf['site_authors']); ?>">
-      <meta name="generator" content="Astro v5.13.2">
+      <meta name="generator" content="<?php print $conf['version']; ?>">
       <title><?php print $conf['site_name']; ?></title>
 <link href="<?php print $conf['site_url']; ?>css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
    </head>
@@ -18,7 +18,7 @@ class layouts {
          <div class="container py-4">
         <?php
     }
-    public function nav($conf) {
+    public function navbar($conf) {
         ?>
          <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
             <div class="container-fluid">
