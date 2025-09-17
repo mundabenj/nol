@@ -21,4 +21,4 @@ $ObjLayout = new layouts();
 $ObjAuth = new Auth($conf);
 $ObjFncs = new fncs();
 
-$ObjAuth->signup($conf, $ObjFncs);
+$ObjAuth->signup($conf, $ObjFncs, $lang, $ObjSendMail);

@@ -1,6 +1,15 @@
 <?php
 class auth{
-    public function signup($conf, $ObjFncs){
+
+    // Method to bind email variables
+    public function bindEmailVars($template, $variables) {
+        foreach ($variables as $key => $value) {
+            $template = str_replace('{{' . $key . '}}', $value, $template);
+        }
+        return $template;
+    }
+
+    public function signup($conf, $ObjFncs, $lang, $ObjSendMail){
         // code for signup
         if(isset($_POST['signup'])){
 
@@ -40,11 +49,30 @@ class auth{
                 // If no errors, proceed with signup logic
                 // die($fullname . " " . $email . " " . $password); // For demonstration purposes only
                 // Perform signup logic (e.g., save to database)
+
+                // Send verification email
+                $variables = [
+                    'site_name' => $conf['site_name'],
+                    'fullname' => $fullname,
+                    'activation_code' => $conf['verification_code']
+                ];
+
+                $mailCnt = [
+                    'name_from' => $conf['site_name'],
+                    'email_from' => $conf['admin_email'],
+                    'name_to' => $fullname,
+                    'email_to' => $email,
+                    'subject' => $this->bindEmailVars($lang['reg_ver_subject'], $variables),
+                    'body' => nl2br($this->bindEmailVars($lang['reg_ver_body'], $variables))
+                ];
+
+                $ObjSendMail->Send_Mail($conf, $mailCnt);
+
                 // Clear session data after successful signup
                 unset($_SESSION['fullname']);
                 unset($_SESSION['email']);
                 unset($_SESSION['password']);
-                $ObjFncs->setMsg('msg', 'Sign up successful. You can now log in.', 'success');
+                $ObjFncs->setMsg('msg', 'Sign up successful. Please check your email for the verification code', 'success');
             }else{
                 $ObjFncs->setMsg('errors', $errors, 'danger');
                 $ObjFncs->setMsg('msg', 'Please fix the errors below and try again.', 'danger');
