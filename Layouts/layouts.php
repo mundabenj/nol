@@ -11,7 +11,7 @@ class layouts {
       <meta name="author" content="<?php print implode(', ', $conf['site_authors']); ?>">
       <meta name="generator" content="<?php print $conf['version']; ?>">
       <title><?php print $conf['site_name']; ?></title>
-<link href="<?php print $conf['site_url']; ?>css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+      <link href="<?php print $conf['site_url']; ?>css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
    </head>
    <body>
       <main>
@@ -48,7 +48,6 @@ public function banner($conf) {
     }
 public function content($conf) {
         ?>
-
             <div class="row align-items-md-stretch">
                <div class="col-md-6">
                   <div class="h-100 p-5 text-bg-dark rounded-3">
@@ -69,11 +68,10 @@ public function content($conf) {
     }
     public function form_content($conf, $ObjForm, $ObjFncs) {
         ?>
-
             <div class="row align-items-md-stretch">
                <div class="col-md-6">
                   <div class="h-100 p-5 text-bg-dark rounded-3">
-<?php if(basename($_SERVER['PHP_SELF']) == 'signup.php') {$ObjForm->signup($conf, $ObjFncs); } elseif(basename($_SERVER['PHP_SELF']) == 'signin.php') {$ObjForm->signin($conf, $ObjFncs); } ?>
+                     <?php if(basename($_SERVER['PHP_SELF']) == 'signup.php') {$ObjForm->signup($conf, $ObjFncs); } elseif(basename($_SERVER['PHP_SELF']) == 'signin.php') {$ObjForm->signin($conf, $ObjFncs); } ?>
                   </div>
                </div>
                <div class="col-md-6">
@@ -88,7 +86,6 @@ public function content($conf) {
     }
     public function footer($conf) {
         ?>
-
             <footer class="pt-3 mt-4 text-body-secondary border-top">
               <p>Copyright &copy; <?php print date("Y"); ?> <?php print $conf['site_name']; ?> - All Rights Reserved</p> 
             </footer>
