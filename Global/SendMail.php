@@ -25,8 +25,8 @@ try {
     $mail->Port       = $conf['smtp_port'];                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom($mailCnt['email_from'], $mailCnt['name_from']);
-    $mail->addAddress($mailCnt['email_to'], $mailCnt['name_to']);     //Add a recipient
+    $mail->setFrom($mailCnt['mail_from'], $mailCnt['name_from']);
+    $mail->addAddress($mailCnt['mail_to'], $mailCnt['name_to']);     //Add a recipient
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
@@ -34,7 +34,7 @@ try {
     $mail->Body    = $mailCnt['body'];
 
     $mail->send();
-    echo 'Message has been sent';
+    // echo 'Message has been sent';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

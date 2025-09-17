@@ -58,10 +58,10 @@ class auth{
                 ];
 
                 $mailCnt = [
-                    'name_from' => $conf['site_name'],
-                    'email_from' => $conf['admin_email'],
+                    'name_from' => $conf['mail_from_name'],
+                    'mail_from' => $conf['mail_from'],
                     'name_to' => $fullname,
-                    'email_to' => $email,
+                    'mail_to' => $email,
                     'subject' => $this->bindEmailVars($lang['reg_ver_subject'], $variables),
                     'body' => nl2br($this->bindEmailVars($lang['reg_ver_body'], $variables))
                 ];
