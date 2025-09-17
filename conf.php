@@ -27,8 +27,8 @@ $conf['db_name'] = 'nol';
 // Email Configuration
 $conf['mail_type'] = 'smtp'; // Options: 'smtp' or 'mail'
 $conf['smtp_host'] = 'smtp.gmail.com';
-$conf['smtp_user'] = 'bbitalex@gmail.com';
-$conf['smtp_pass'] = 'snhm dohk veom smmz'; // Use App Password if 2FA is enabled
+$conf['smtp_user'] = 'example@gmail.com';
+$conf['smtp_pass'] = 'secretpassword'; // Use App Password if 2FA is enabled
 $conf['smtp_port'] = 465;
 $conf['smtp_secure'] = 'ssl';
 
