@@ -32,7 +32,7 @@ class auth{
                 $errors['password_error'] = "Password is required";
             }
 
-            // Only allow letters and whitespace for fullname
+            // Only allow letters, whitespaces, and hyphens in fullname
             if (!preg_match("/^[a-zA-Z-' ]*$/", $fullname)) {
                 $errors['nameFormat_error'] = "Only letters and white space allowed in fullname";
             }
@@ -68,7 +68,8 @@ class auth{
                 $variables = [
                     'site_name' => $conf['site_name'],
                     'fullname' => $fullname,
-                    'activation_code' => $conf['verification_code']
+                    'activation_code' => $conf['verification_code'],
+                    'mail_from_name' => $conf['mail_from_name']
                 ]; // Variables to replace in email template
 
                 $mailCnt = [

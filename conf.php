@@ -27,7 +27,7 @@ $conf['site_url'] = $base_url . $conf['db_name'] . '/';
 $conf['site_title'] = $conf['site_name'] . ' - ' . $conf['site_slogan'];
 $conf['site_desc'] = 'Join ' . $conf['site_name'] . ' to connect with fellow students, share knowledge, and build a brighter future together.';
 $conf['site_authors'] = ['Alex Okama', $conf['site_name']];
-$conf['admin_email'] = 'admin@' . $conf['site_domain'];
+$conf['site_email'] = 'admin@' . $conf['site_domain'];
 $conf['version'] = 'v1.0.0';
 
 // Site Language
@@ -37,8 +37,8 @@ require_once __DIR__ . "/Lang/" . $conf['site_lang'] . ".php"; // Include langua
 // Email Configuration
 $conf['mail_type'] = 'smtp'; // Options: 'smtp' or 'mail'
 $conf['smtp_host'] = 'smtp.gmail.com'; // For Gmail SMTP
-$conf['smtp_user'] = 'your_email@gmail.com'; // Your email address
-$conf['smtp_pass'] = 'yourapppassword'; // Use App Password if 2FA is enabled
+$conf['smtp_user'] = 'bbitalex@gmail.com'; // Your email address
+$conf['smtp_pass'] = 'rahj hkmo blcl pngs'; // Use App Password if 2FA is enabled
 $conf['smtp_port'] = 465; // For SSL
 $conf['smtp_secure'] = 'ssl'; // Options: 'ssl' or 'tls'
 $conf['mail_from'] = 'no-reply@' . $conf['site_domain'];

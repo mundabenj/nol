@@ -2,7 +2,7 @@
 require_once 'conf.php'; // Include configuration file
 
 // Directories to search for class files
-$directories = ["Forms", "Layouts", "Global", "Proc", "Fncs"];
+$directories = ["Forms", "Layouts", "Globals", "Proc", "Fncs"];
 
 // Autoload classes from specified directories
 spl_autoload_register(function ($className) use ($directories) {

@@ -4,10 +4,11 @@ class fncs{
     public function setMsg($name, $value, $class){
         if(is_array($value)){
             $_SESSION[$name] = $value;
-        }else{
-            $_SESSION[$name] = "<div class='alert alert-".$class."' role='alert'>".$value."</div>";
+        } else {
+            $_SESSION[$name] = "<div class='alert alert-$class' role='alert'>$value</div>";
         }
     }
+
     // Function to get and clear messages from session
     public function getMsg($name){
         if(isset($_SESSION[$name])){
