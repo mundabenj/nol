@@ -37,8 +37,8 @@ require_once __DIR__ . "/Lang/" . $conf['site_lang'] . ".php"; // Include langua
 // Email Configuration
 $conf['mail_type'] = 'smtp'; // Options: 'smtp' or 'mail'
 $conf['smtp_host'] = 'smtp.gmail.com'; // For Gmail SMTP
-$conf['smtp_user'] = 'bbitalex@gmail.com'; // Your email address
-$conf['smtp_pass'] = 'rahj hkmo blcl pngs'; // Use App Password if 2FA is enabled
+$conf['smtp_user'] = 'your_email@gmail.com'; // Your email address
+$conf['smtp_pass'] = 'secretpassword'; // Use App Password if 2FA is enabled
 $conf['smtp_port'] = 465; // For SSL
 $conf['smtp_secure'] = 'ssl'; // Options: 'ssl' or 'tls'
 $conf['mail_from'] = 'no-reply@' . $conf['site_domain'];
