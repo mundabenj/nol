@@ -43,7 +43,7 @@ class dbConnection{
                 }
                 $this->connection = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME, $DB_PORT);
                 if ($this->connection->connect_error) { return "Connection failed: " . $this->connection->connect_error; }else{
-                    print "Connected successfully with ".$DB_TYPE;
+                    // print "Connected successfully with ".$DB_TYPE;
                 }
                 break;
             case 'PDO':
@@ -54,7 +54,7 @@ class dbConnection{
                     $this->connection = new PDO("mysql:host=$DB_HOST:$DB_PORT;dbname=$DB_NAME", $DB_USER, $DB_PASS);
                     // set the PDO error mode to exception
                     $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    print "Connected successfully with ".$DB_TYPE;
+                    // print "Connected successfully with ".$DB_TYPE;
                 } catch(PDOException $e) {
                     die("Connection failed: " . $e->getMessage());
                 }
