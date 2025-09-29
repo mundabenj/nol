@@ -238,9 +238,27 @@ class dbConnection{
     }
 
     // Alter table to add foreign key constraints
-    public function addConstraint($table, $column, $ref_table, $on_delete, $on_update) {
+    public function addConstraint($table, $ref_table, $column, $on_delete, $on_update) {
         $constraint_name = "{$table}_{$column}_fk";
         $sql = "ALTER TABLE `$table` ADD CONSTRAINT `$constraint_name` FOREIGN KEY (`$column`) REFERENCES $ref_table ON DELETE $on_delete ON UPDATE $on_update";
+        return $this->extracted($sql);
+    }
+
+    // Method to add columns to an existing table (for testing purposes)
+    public function addColumn($tableName, $columnName, $dataType) {
+        $sql = "ALTER TABLE `$tableName` ADD COLUMN `$columnName` $dataType";
+        return $this->extracted($sql);
+    }
+
+    // Method to remove columns from an existing table (for testing purposes)
+    public function removeColumn($tableName, $columnName) {
+        $sql = "ALTER TABLE `$tableName` DROP COLUMN `$columnName`";
+        return $this->extracted($sql);
+    }
+
+    // Method to rename columns in an existing table (for testing purposes)
+    public function renameColumn($tableName, $oldColumnName, $newColumnName, $dataType) {
+        $sql = "ALTER TABLE `$tableName` CHANGE `$oldColumnName` `$newColumnName` $dataType";
         return $this->extracted($sql);
     }
 

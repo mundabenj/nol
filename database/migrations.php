@@ -21,7 +21,7 @@ $create_users = $SQL->createTable('users', [
 ]);
 
 if ($create_users === TRUE) {
-  echo "Table users created successfully";
+  echo "Table users created successfully | ";
 } else {
   echo "Error creating table: " . $create_users;
 }
@@ -38,11 +38,10 @@ $create_roles = $SQL->createTable('roles', [
 ]);
 
 if ($create_roles === TRUE) {
-  echo "Table roles created successfully";
+  echo "Table roles created successfully | ";
 } else {
   echo "Error creating table: " . $create_roles;
 }
-
 
 // Drop genders table if exists
 $drop_genders = $SQL->dropTable('genders');
@@ -56,17 +55,17 @@ $create_genders = $SQL->createTable('genders', [
 ]);
 
 if ($create_genders === TRUE) {
-  echo "Table genders created successfully";
+  echo "Table genders created successfully | ";
 } else {
   echo "Error creating table: " . $create_genders;
 }
 
 
 // Alter users table to add constraints
-$alter_users_table = $SQL->addConstraint('users', 'roleId', 'roles', 'CASCADE', 'CASCADE');
-$alter_users_table = $SQL->addConstraint('users', 'genderId', 'genders', 'CASCADE', 'CASCADE');
+$alter_users_table = $SQL->addConstraint('users', 'roles', 'roleId', 'CASCADE', 'CASCADE');
+$alter_users_table = $SQL->addConstraint('users', 'genders', 'genderId', 'CASCADE', 'CASCADE');
 if ($alter_users_table === TRUE) {
-  echo "Foreign key constraints added to users table successfully";
+  echo "Foreign key constraints added to users table successfully | ";
 } else {
   echo "Error adding foreign key constraints: " . $alter_users_table;
 }
