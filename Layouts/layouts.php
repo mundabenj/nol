@@ -10,7 +10,7 @@ class layouts {
       <meta name="description" content="<?php print $conf['site_title']; ?>">
       <meta name="author" content="<?php print implode(', ', $conf['site_authors']); ?>">
       <meta name="generator" content="<?php print $conf['version']; ?>">
-      <title><?php print $conf['site_name']; ?></title>
+      <title><?php print $conf['site_title']; ?></title>
       <link href="<?php print $conf['site_url']; ?>css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
    </head>
    <body>
@@ -40,6 +40,7 @@ public function banner($conf) {
             <div class="p-1 mb-4 bg-body-tertiary rounded-3">
                <div class="container-fluid py-1">
                   <h1 class="display-5 fw-bold">Welcome to <?php print $conf['site_name']; ?></h1>
+                  <h2 class="display-5"><?php print $conf['site_slogan']; ?></h2>
                   <p class="col-md-8 fs-4">Check out the examples below for how you can remix and restyle it to your liking.</p>
                   <button class="btn btn-primary btn-lg" type="button">Join now</button> 
                </div>
@@ -71,7 +72,7 @@ public function content($conf) {
             <div class="row align-items-md-stretch">
                <div class="col-md-6">
                   <div class="h-100 p-5 text-bg-dark rounded-3">
-                     <?php if(basename($_SERVER['PHP_SELF']) == 'signup.php') {$ObjForm->signup($conf, $ObjFncs); } elseif(basename($_SERVER['PHP_SELF']) == 'signin.php') {$ObjForm->signin($conf, $ObjFncs); } ?>
+                     <?php if(basename($_SERVER['PHP_SELF']) == 'signup.php') {$ObjForm->signup($conf, $ObjFncs); } elseif(basename($_SERVER['PHP_SELF']) == 'signin.php') {$ObjForm->signin($conf, $ObjFncs); } elseif(basename($_SERVER['PHP_SELF']) == 'verify_code.php') {$ObjForm->verify_code($conf, $ObjFncs); } elseif(basename($_SERVER['PHP_SELF']) == 'forgot_password.php') {$ObjForm->forgot_password($conf, $ObjFncs); } ?>
                   </div>
                </div>
                <div class="col-md-6">
