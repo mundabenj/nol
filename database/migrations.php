@@ -60,7 +60,6 @@ if ($create_genders === TRUE) {
   echo "Error creating table: " . $create_genders;
 }
 
-
 // Alter users table to add constraints
 $alter_users_table = $SQL->addConstraint('users', 'roles', 'roleId', 'CASCADE', 'CASCADE');
 $alter_users_table = $SQL->addConstraint('users', 'genders', 'genderId', 'CASCADE', 'CASCADE');
@@ -72,6 +71,4 @@ if ($alter_users_table === TRUE) {
 
 // Close the database connection
 $SQL->closeConnection();
-
-// session_destroy(); // Destroy the session if it was started
 ?> 
