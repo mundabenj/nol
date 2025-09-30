@@ -220,6 +220,11 @@ class dbConnection{
 		break;
 		}
 	}
+
+	/******************************************************************************************
+	Method to execute custom migrations queries (tested) for DROP, CREATE, ALTER
+	******************************************************************************************/
+
         // Method to drop a table (for testing purposes)
     public function dropTable($tableName) {
         $sql = "DROP TABLE IF EXISTS `$tableName`";
